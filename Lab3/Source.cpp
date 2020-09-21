@@ -30,13 +30,13 @@ int main()
 		inFile >> num1 >> num2 >> num3 >> num4; //Reads integers from inMeanStd.dat.txt into num input variables
 		
 		outFile << "The mean of these four integers is: " << endl;
-		outFile << Mean_Calc(num1, num2, num3, num4) << endl;
+		outFile << float(Mean_Calc(num1, num2, num3, num4)) << endl; //function call returns the mean
 
-		float mean = Mean_Calc(num1, num2, num3, num4);
+		float mean = Mean_Calc(num1, num2, num3, num4); //declares the return value as the mean for StdDev argument.
 
 		outFile << "The standard deviation of these four integers is: " << endl;
 		outFile << fixed << setprecision(6)
-			<< float(StdDev_Calc(num1, num2, num3, num4, mean));
+			<< float(StdDev_Calc(num1, num2, num3, num4, mean)); //Return value is population standard deviation.
 
 	} 
 	else
@@ -45,7 +45,7 @@ int main()
 		cin >> num1 >> num2 >> num3 >> num4; //Reads values into num variables from keyboard
 
 		cout << "The mean of these four integers is: " << endl;
-		cout << Mean_Calc(num1, num2, num3, num4) << endl;
+		cout << float(Mean_Calc(num1, num2, num3, num4)) << endl; //Function call returns mean value
 
 		/*This assignment statement sets the value of the identifer mean to the return value of Mean_Calc,
 		  which is the mean of the four integers passed to the function.*/
@@ -53,11 +53,13 @@ int main()
 
 		cout << "The standard deviation of these four integers is: " << endl;
 		cout << fixed << setprecision(6)
-			<< float(StdDev_Calc(num1, num2, num3, num4, mean)); /*********************************************************************************
-																  *Standard deviation function is passed the four integers along with their mean. *
-																  *The return value is the standard deviation of the four integers,				  *
-																  *and this is what is printed to the console via the output stream.			  *
-																  *********************************************************************************/
+			<< float(StdDev_Calc(num1, num2, num3, num4, mean));
+
+		/*
+		*Standard deviation function is passed the four integers along with their mean.
+		*The return value is the standard deviation of the four integers,
+		*and this is what is printed to the console via the output stream.
+	    */
 	}
 
 	return 0;
@@ -73,7 +75,18 @@ int Mean_Calc(int num1, int num2, int num3, int num4)
 //StdDev_Calc definition: Calculates standard deviation of four integers passed
 float StdDev_Calc(float num1, float num2, float num3, float num4, float mean)
 {
+	/*
+	Calculation below:
+	1. subtracts the mean from each integer entered
+	2. squares this value
+	3. adds deviations together
+	4. divides deviations by four
+	5. takes the square root of the quotient
+	6. stores result in StdDev and the function returns this value to main()
+	*/
+
 	float StdDev = float(sqrt(((pow(num1 - mean, 2) + pow(num2 - mean, 2) + pow(num3 - mean, 2) + pow(num4 - mean, 2)) / 4)));
+	
 	
 	return StdDev;
 }
