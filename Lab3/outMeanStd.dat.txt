@@ -1,1 +1,4 @@
-5.00
+The mean of these four integers is: 
+5
+The standard deviation of these four integers is: 
+2.236068
