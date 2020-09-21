@@ -59,7 +59,7 @@ int main()
 		*Standard deviation function is passed the four integers along with their mean.
 		*The return value is the standard deviation of the four integers,
 		*and this is what is printed to the console via the output stream.
-	    */
+		*/
 	}
 
 	return 0;
@@ -86,7 +86,6 @@ float StdDev_Calc(float num1, float num2, float num3, float num4, float mean)
 	*/
 
 	float StdDev = float(sqrt(((pow(num1 - mean, 2) + pow(num2 - mean, 2) + pow(num3 - mean, 2) + pow(num4 - mean, 2)) / 4)));
-	
 	
 	return StdDev;
 }
