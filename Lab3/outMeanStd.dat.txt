@@ -1,4 +1,3 @@
-The mean of these four integers is: 
-5
-The standard deviation of these four integers is: 
-2.236068
+The four integers in inMeanStd.dat.txt are: 2 4 6 1
+The mean of these four integers is: 3.25
+The standard deviation of these four integers is: 1.920286
