@@ -7,7 +7,7 @@
 using namespace std;
 
 //Function prototypes for Mean_Calc and StdDev_Calc
-int Mean_Calc(int num1, int num2, int num3, int num4);
+float Mean_Calc(float num1, float num2, float num3, float num4);
 float StdDev_Calc(float num1, float num2, float num3, float num4, float mean);
 
 int main()
@@ -28,7 +28,7 @@ int main()
 		inFile.open("inMeanStd.dat.txt");
 		outFile.open("outMeanStd.dat.txt");
 		inFile >> num1 >> num2 >> num3 >> num4; //Reads integers from inMeanStd.dat.txt into num input variables
-		
+
 		outFile << "The mean of these four integers is: " << endl;
 		outFile << float(Mean_Calc(num1, num2, num3, num4)) << endl; //function call returns the mean
 
@@ -38,7 +38,7 @@ int main()
 		outFile << fixed << setprecision(6)
 			<< float(StdDev_Calc(num1, num2, num3, num4, mean)); //Return value is population standard deviation.
 
-	} 
+	}
 	else
 	{
 		cout << "Enter four integers: " << endl;
@@ -66,9 +66,9 @@ int main()
 }
 
 //Mean_Calc definition: Calculates the mean of the four integers passed
-int Mean_Calc(int num1, int num2, int num3, int num4)
+float Mean_Calc(float num1, float num2, float num3, float num4)
 {
-	int mean = (num1 + num2 + num3 + num4) / 4;
+	float mean = (num1 + num2 + num3 + num4) / 4;
 	return mean;
 }
 
@@ -86,6 +86,6 @@ float StdDev_Calc(float num1, float num2, float num3, float num4, float mean)
 	*/
 
 	float StdDev = float(sqrt(((pow(num1 - mean, 2) + pow(num2 - mean, 2) + pow(num3 - mean, 2) + pow(num4 - mean, 2)) / 4)));
-	
+
 	return StdDev;
 }
