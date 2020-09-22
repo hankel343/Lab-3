@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Lab3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="inMeanStd.dat.txt" />
