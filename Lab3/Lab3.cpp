@@ -1,3 +1,11 @@
+/************************************************************************
+* Hankel Haldin
+* Lab 3: User and File I/O
+* Due: 9/28/2020
+* Calculating the mean and population standard deviation from console
+* and file input and output.
+***********************************************************************/
+
 #include <iostream>
 #include <fstream> //File input and output
 #include <string> //string input
@@ -94,7 +102,7 @@ float StdDev_Calc(float num1, float num2, float num3, float num4, float mean)
 	3. adds deviations together
 	4. divides deviations by four
 	5. takes the square root of the quotient
-	6. stores result in StdDev and the function returns this value to main()
+	6. stores result in StdDev and the function returns this value to an expression in main()
 	*/
 
 	float StdDev = float(sqrt(((pow(num1 - mean, 2) + pow(num2 - mean, 2) + pow(num3 - mean, 2) + pow(num4 - mean, 2)) / 4)));
