@@ -4,7 +4,7 @@
 * Due: 9/28/2020
 * Calculating the mean and population standard deviation from console
 * and file input and output.
-***********************************************************************/
+************************************************************************/
 
 #include <iostream>
 #include <fstream> //File input and output
@@ -33,8 +33,8 @@ int main()
 	int num2;
 	int num3;
 	int num4;
-	float fileMean; //mean calculated for integers stored in inMeanStd.dat.txt
-	float mean; //mean calculated for integers entered from console
+	float fileMean; //mean calculated for integers stored in inMeanStd.dat.txt; data type is float to handle means of odd numbers.
+	float mean; //mean calculated for integers entered from console; data type is float to handle means of odd numbers.
 
 	//Opening input file inMeanStd.dat.txt and output file outMeanStd.dat.txt
 	inFile.open("inMeanStd.dat.txt");
@@ -52,7 +52,7 @@ int main()
 	fileMean = Mean_Calc(fileNum1, fileNum2, fileNum3, fileNum4); //This value is passed as an argument to the StdDev_Calc function
 
 	outFile << "\nThe standard deviation of these four integers is: " 
-		<< fixed << showpoint << setprecision(6)
+		<< fixed << showpoint << setprecision(2)
 		<< float(StdDev_Calc(fileNum1, fileNum2, fileNum3, fileNum4, fileMean)); //Return value is population standard deviation.
 
 	//Closing input and output files
@@ -73,7 +73,7 @@ int main()
 	 which is the mean of the four integers passed to the function.*/
 	mean = Mean_Calc(num1, num2, num3, num4);
 
-	cout << "\nThe standard deviation of these four integers is: " << fixed << setprecision(6)
+	cout << "\nThe standard deviation of these four integers is: " << fixed << setprecision(2)
 		<< float(StdDev_Calc(num1, num2, num3, num4, mean));
 
 	/*
@@ -92,7 +92,7 @@ float Mean_Calc(float num1, float num2, float num3, float num4)
 	return mean;
 }
 
-//StdDev_Calc definition: Calculates standard deviation of four integers passed
+//StdDev_Calc definition: Calculates population standard deviation of four integers passed
 float StdDev_Calc(float num1, float num2, float num3, float num4, float mean)
 {
 	/*
