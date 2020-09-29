@@ -28,6 +28,7 @@ int main()
 	int fileNum2;
 	int fileNum3;
 	int fileNum4;
+	string filePath; //User is able to input file path to calculate values from a file
 	//Num identifiers read data that is input from the keyboard
 	int num1;
 	int num2;
@@ -36,8 +37,14 @@ int main()
 	float fileMean; //mean calculated for integers stored in inMeanStd.dat.txt; data type is float to handle means of odd numbers.
 	float mean; //mean calculated for integers entered from console; data type is float to handle means of odd numbers.
 
+	cout << "Enter a file path to a file on your computer named inMeanStd.dat that includes the file extension and " 
+		<< "contains four integers.\n" << endl;
+	cout << "An example file path: Ex. C:\\users\\username\\Documents\\inMeanStd.dat.txt\n" << endl;
+	cout << "File path: ";
+	cin >> filePath;
+
 	//Opening input file inMeanStd.dat.txt and output file outMeanStd.dat.txt
-	inFile.open("inMeanStd.dat.txt");
+	inFile.open(filePath);
 	outFile.open("outMeanStd.dat.txt");
 	inFile >> fileNum1 >> fileNum2 >> fileNum3 >> fileNum4; //Reads integers from inMeanStd.dat.txt into num input variables
 
@@ -60,7 +67,7 @@ int main()
 	outFile.close();
 
 	//Portion of program that takes input directly from the keyboard
-	cout << "Enter four integers: " << endl;
+	cout << "\nNow enter four integers for console output: " << endl;
 	cin >> num1 >> num2 >> num3 >> num4; //Reads values into num variables from keyboard
 
 	cout << "You entered the following integers: "
